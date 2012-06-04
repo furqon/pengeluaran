@@ -1,0 +1,20 @@
+Avocado\ExpensesBundle\Entity\Expenses:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    userid:
+      type: integer
+    time:
+      type: datetime
+    record_id:
+      type: integer
+    notes:
+      type: text
+    amount:
+      type: float
+  lifecycleCallbacks: {  }

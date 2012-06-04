@@ -1,0 +1,45 @@
+<h1>Expenses list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Userid</th>
+            <th>Time</th>
+            <th>Record_id</th>
+            <th>Notes</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('expenses_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.userid }}</td>
+            <td>{% if entity.time %}{{ entity.time|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{{ entity.recordid }}</td>
+            <td>{{ entity.notes }}</td>
+            <td>{{ entity.amount }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('expenses_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('expenses_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('expenses_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

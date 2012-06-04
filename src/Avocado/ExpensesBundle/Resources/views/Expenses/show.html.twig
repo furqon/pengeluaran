@@ -1,0 +1,49 @@
+<h1>Expenses</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Userid</th>
+            <td>{{ entity.userid }}</td>
+        </tr>
+        <tr>
+            <th>Time</th>
+            <td>{{ entity.time|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Record_id</th>
+            <td>{{ entity.recordid }}</td>
+        </tr>
+        <tr>
+            <th>Notes</th>
+            <td>{{ entity.notes }}</td>
+        </tr>
+        <tr>
+            <th>Amount</th>
+            <td>{{ entity.amount }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('expenses') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('expenses_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('expenses_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

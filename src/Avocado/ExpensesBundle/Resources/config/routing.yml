@@ -1,0 +1,7 @@
+ExpensesBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: ExpensesBundle:Default:index }
+
+ExpensesBundle_expenses:
+    resource: "@ExpensesBundle/Resources/config/routing/expenses.yml"
+    prefix:   /expenses

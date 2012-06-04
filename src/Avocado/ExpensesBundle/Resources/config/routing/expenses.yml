@@ -1,0 +1,30 @@
+expenses:
+    pattern:  /
+    defaults: { _controller: "ExpensesBundle:Expenses:index" }
+
+expenses_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "ExpensesBundle:Expenses:show" }
+
+expenses_new:
+    pattern:  /new
+    defaults: { _controller: "ExpensesBundle:Expenses:new" }
+
+expenses_create:
+    pattern:  /create
+    defaults: { _controller: "ExpensesBundle:Expenses:create" }
+    requirements: { _method: post }
+
+expenses_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "ExpensesBundle:Expenses:edit" }
+
+expenses_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "ExpensesBundle:Expenses:update" }
+    requirements: { _method: post }
+
+expenses_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "ExpensesBundle:Expenses:delete" }
+    requirements: { _method: post }
