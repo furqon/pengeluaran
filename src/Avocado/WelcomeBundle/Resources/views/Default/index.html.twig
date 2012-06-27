@@ -1,289 +1,46 @@
-{% extends 'WelcomeBundle::layout.html.twig' %}
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/welcome/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
 
 {% block body %}
-<div id="home">
-    <div class="top">
-        <span class="left">2006</span>
-        <a href="/"><img src="static/img/sofa-logo.jpg" width="135" height="100" alt="Sofa Logo"></a>
-        <span class="right">2011</span>
-    </div>
-    <h1>We Were Sofa</h1>
-    <h2>A software and interaction design company that built great products.</h2>
+
+<div class="container">
+  <!-- Main hero unit for a primary marketing message or call to action -->
+  <div class="hero-unit">
+	<h1>Info Pengeluaran!</h1>
+	<p>This is a tools that you can use to track down your expenses.</p>
+	<p><a class="btn btn-primary btn-large">More &raquo;</a></p>
+  </div>
 
 
-    <div id="nav">
-        <ul>
-            <li>
-                <h3>People</h3>
-                <p>Read about <span class="show" content="people">the people</span> who built Sofa.</p>
-            </li>
-            <li>
-                <h3>Products</h3>
-                <p>Sofa's gone but <span class="show" content="products">our products</span> live on.</p>
-            </li>
-            <li>
-                <h3>Facebook</h3>
-                <p>More about <span class="show" content="facebook">the acquisition</span> by Facebook in 2011.</p>
-            </li>
-            <li class="last">
-                <h3>Archive</h3>
-                <p>Check out <a href="/archive">the old site</a> for our design work and blog posts.</p>
-            </li>
-        </ul>
-    </div>
-    <div class="footer" id="topfooter">
-        <small>Copyright &copy; 2011 madebysofa holding BV</small>
-    </div>
-</div>
-<div id="content">
-<div class="content people">
-    <div class="wrap">
-        <div class="about">
-            <h3>History</h3>
+  <!-- Example row of columns -->
+  <div class="row">
+	<div class="span4">
+	  <h2>Heading</h2>
+	   <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+	  <p><a class="btn" href="#">View details &raquo;</a></p>
+	</div>
+	<div class="span4">
+	  <h2>Heading</h2>
+	   <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+	  <p><a class="btn" href="#">View details &raquo;</a></p>
+	</div>
+	<div class="span4">
+        {% render "FOSUserBundle:Security:login" %}
+	</div>
+  </div>
 
-            <p>Sofa was a small design-centered software company, founded by three guys who taught themselves how to code and make apps.</p>
-            <p>Next to building and selling products, Sofa fueled its growth through design contracting work and quickly became known as a world-class design studio and software company. As our team and product portfolio grew, we moved away from contracting and focused fully on our own Mac, iOS and web products.</p>
-            <p>Since 2011, our mission to create great experiences continues at Facebook – now for millions of people at a time.</p>
+  <hr>
 
-        </div>
-        <div class="awards">
-            <ul>
-                <li>
-                    <img src="static/img/history/apple-logo.gif" width="24" height="29" alt="Apple Logo">
-                    <p>Apple Design Award 2009</p>
-                    <small>Versions won an award in the Developer Showcase category. More info at <a href="http://www.macworld.com/article/141078/2009/06/apple_design_awards.html">Macworld.com</a></small>
-                </li>
-                <li>
-                    <img src="static/img/history/apple-logo.gif" width="24" height="29" alt="Apple Logo">
-                    <p>Apple Design Award 2008</p>
-                    <small>Checkout was rewarded runner-up for delivering a great user experience. More info at <a href="http://www.macworld.com/article/133919/2008/06/apple_design_awards.html">Macworld.com</a></small>
-                </li>
-                <li class="last">
-                    <img src="static/img/history/business-week.gif" width="24" height="29" alt="BusinessWeek Logo">
-                    <p class="last">BusinessWeek Award</p>
-                    <small>Madebysofa.com won a Best of the Web Award for bringing print design to the web. More info at <a href="http://images.businessweek.com/ss/08/06/0623_best_worst_web/source/9.htm">BusinessWeek.com</a></small>
-                </li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-        <div class="team">
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/koen-bok-off.jpg)">
-                    <img class="fade" src="static/img/history/koen-bok-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/koenbok">Facebook </a>
-                <h4>Koen Bok</h4>
-                <small>Koen started programming Python to enhance his video mixing sets. He has a keen eye for design and branding.</small>
-            </div>
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/dirk-stoop-off.jpg)">
-                    <img class="fade" src="static/img/history/dirk-stoop-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/djstoop">Facebook</a>
-                <h4>Dirk Stoop</h4>
-                <small>Dirk is an interaction fanatic who likes to spit and polish. We also suspect he actually likes working on contracts.</small>
-            </div>
-            <div class="profile right">
-                <div class="thumbnail" style="background-image:url(static/img/history/jasper-hauser-off.jpg)">
-                    <img class="fade" src="static/img/history/jasper-hauser-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/jasper.hauser">Facebook</a>
-                <h4>Jasper Hauser</h4>
-                <small>Jasper is allergic to ugly. He has a background in visual arts and can snap his left eye on the pixel while designing.</small>
-            </div>
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/hugo-van-heuven-off.jpg)">
-                    <img class="fade" src="static/img/history/hugo-van-heuven-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/hugovanheuven">Facebook</a>
-                <h4>Hugo van Heuven</h4>
-                <small>When Hugo's not coding, designing or 3D modeling, he probably discovered something else that needs to be done.</small>
-            </div>
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/jorn-van-dijk-off.jpg)">
-                    <img class="fade" src="static/img/history/jorn-van-dijk-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/jornvandijk">Facebook</a>
-                <h4>Jorn van Dijk</h4>
-                <small>Jorn likes coming up with the big picture, then zooming in like there's no tomorrow. He'll push pixels 'til they're round.</small>
-            </div>
-            <div class="profile right">
-                <div class="thumbnail" style="background-image:url(static/img/history/joy-vincent-niemantsverdriet-off.jpg)">
-                    <img class="fade" src="static/img/history/joy-vincent-niemantsverdriet-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/joyvincentn">Facebook</a>
-                <h4>Joy-Vincent Niemantsverdriet</h4>
-                <small>Whenever a mockup is just perfect, we give it to Joy and get it back better, much better.</small>
-            </div>
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/klaas-pieter-annema-off.jpg)">
-                    <img class="fade" src="static/img/history/klaas-pieter-annema-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/klaaspieter">Facebook</a>
-                <h4>Klaas Pieter Annema</h4>
-                <small>Klaas Pieter writes as many programming languages as possible while drumming on his desk with a pencil.</small>
-            </div>
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/jonathan-dann-off.jpg)">
-                    <img class="fade" src="static/img/history/jonathan-dann-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/j.p.dann">Facebook</a>
-                <h4>Jonathan Dann</h4>
-                <small>Jon is a self–taught Cocoa developer. Luckily for us, he stumbled upon Sofa after a brief plunge into particle physics.</small>
-            </div>
-            <div class="profile right">
-                <div class="thumbnail" style="background-image:url(static/img/history/mathieu-tozer-off.jpg)">
-                    <img class="fade" src="static/img/history/mathieu-tozer-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/mathieutozer">Facebook</a>
-                <h4>Mathieu Tozer</h4>
-                <small>After traveling the world to help people create comic books, Mat joined Sofa to code in obscure flavors of Cocoa.</small>
-            </div>
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/jenneke-valdes-off.jpg)">
-                    <img class="fade" src="static/img/history/jenneke-valdes-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/jennekevaldes">Facebook</a>
-                <h4>Jenneke Valdés</h4>
-                <small>With patience, Jenneke answered our software's many questions about its users, or was it the other way around?</small>
-            </div>
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/laurens-bon-off.jpg)">
-                    <img class="fade" src="static/img/history/laurens-bon-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/laurens.bon">Facebook</a>
-                <h4>Laurens Bon</h4>
-                <small>After balancing accounts, Laurens likes to unwind by  playing the piano while doing some currency conversions.</small>
-            </div>
-            <div class="profile right">
-                <div class="thumbnail" style="background-image:url(static/img/history/cathy-shive-off.jpg)">
-                    <img class="fade" src="static/img/history/cathy-shive-on.jpg">
-                </div>
-                <a class="facebook" href="https://www.facebook.com/profile.php?id=598444988">Facebook</a>
-                <h4>Cathy Shive</h4>
-                <small>When she's not building great apps or playing chess with ED-209, Cathy makes secret plans for lunch with Asimo.</small>
-            </div>
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/pieter-de-bie-off.jpg)">
-                    <img class="fade" src="static/img/history/pieter-de-bie-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.twitter.com/pdebie" style="margin-left:8px;">Twitter</a>
-                <h4>Pieter de Bie</h4>
-                <small>Pieter studied AI before joining Sofa as a developer. He likes his tea like he likes his version control: strong, a little sugar.</small>
-            </div>
-            <div class="profile">
-                <div class="thumbnail" style="background-image:url(static/img/history/floris-verloop-off.jpg)">
-                    <img class="fade" src="static/img/history/floris-verloop-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/fverloop">Facebook</a>
-                <h4>Floris Verloop</h4>
-                <small>Floris first interned with Sofa to learn everything we could teach him about design. Then, he kept coming back.</small>
-            </div>
-
-            <div class="profile right">
-                <div class="thumbnail" style="background-image:url(static/img/history/zowieso-off.jpg)">
-                    <img class="fade" src="static/img/history/zowieso-on.jpg">
-                </div>
-                <a class="facebook" href="http://www.facebook.com/pages/Zowieso/181252298611483">Facebook</a>
-                <h4>Zowieso</h4>
-                <small>s6dxyyyyyyy­zzzzzzzzzz­zzzzzzzzzzzzzzzz­tjgmn­yyyyyyyyyyyyyyy­yyyyy</small>
-            </div>
-            <div class="ventures">
-                <h3>Partnerships</h3>
-                <p>In 2007, Sofa and Acclivity entered into a joint venture around Checkout. After Sofa was acquired by Facebook, <a href="http://www.acclivitysoftware.com/">Acclivity</a> took over both Checkout and Enstore.</p>
-                <p>Sofa joined forces with <a href="http://www.picodev.com/">Pico</a> to create Versions. In 2010, shortly after Sofa developed Kaleidoscope, it acquired all of Versions. Both products are now further developed by <a href="http://blackpixel.com/">Black Pixel</a>.</p>
-            </div>
-            <div class="research">
-                <h3>Other Projects</h3>
-                <p>Sofa supported Indie Fever, Michiel van Meeteren's research paper on the indie Mac developer community with a research grant. <a href="/archive/indiefever/">Get the paper here</a>.</p>
-                <p>Sofa frequently hosted Amsterdam <a href="http://cocoaheads.nl/">Cocoaheads</a> meetups, was actively involved in Dutch startup collective <a href="http://www.stikk.nl">STIKK</a> and supported the <a href="http://appsterdam.rs">Appsterdam</a> movement.</p>
-            </div>
-            <div class="footer">
-                <small>Copyright &copy; 2011 madebysofa holding BV</small>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-</div>
-<div class="content products">
-    <div class="wrap">
-        <div class="product container topunit">
-            <div class="versions" onclick="location.href='http://www.versionsapp.com';">
-                <a href="http://www.versionsapp.com">
-                    <img src="static/img/products/versions-2.jpg" width="296" height="289" alt="Versions">
-                </a>
-                <h5>Versions</h5>
-                <h6 class="sub">Subversion Client for Mac</h6>
-                <h6 class="url">WWW.VERSIONSAPP.COM</h6>
-            </div>
-            <div class="kaleidoscope" onclick="location.href='http://www.kaleidoscopeapp.com';">
-                <a href="http://www.kaleidoscopeapp.com">
-                    <img src="static/img/products/kaleidoscope-2.jpg" width="296" height="289" alt="Kaleidoscope">
-                </a>
-                <h5>Kaleidoscope</h5>
-                <h6 class="sub">File Comparison for mac</h6>
-                <h6 class="url">WWW.KALEIDOSCOPEAPP.COM</h6>
-            </div>
-        </div>
-        <div class="development">
-            <p>Now owned and developed by <a href="http://www.blackpixel.com">Black Pixel</a></p>
-        </div>
-        <div class="product container">
-            <div class="checkout" onclick="location.href='http://www.checkoutapp.com';">
-                <a href="http://www.checkoutapp.com">
-                    <img src="static/img/products/checkout-2.jpg" width="334" height="289" alt="Versions">
-                </a>
-                <h5>Checkout</h5>
-                <h6 class="sub">Get a Mac. Start a Store.</h6>
-                <h6 class="url">WWW.CHECKOUTAPP.COM</h6>
-            </div>
-            <div class="enstore" onclick="location.href='http://www.enstore.com';">
-                <a href="http://www.enstore.com">
-                    <img src="static/img/products/enstore-2.jpg" width="334" height="289" alt="Kaleidoscope">
-                </a>
-                <h5>Enstore</h5>
-                <h6 class="sub">Your Store Online</h6>
-                <h6 class="url">WWW.ENSTORE.COM</h6>
-            </div>
-        </div>
-        <div class="development">
-            <p>Now owned and developed by <a href="http://www.acclivitynyc.com">Acclivity NYC</a></p>
-        </div>
-
-        <div class="footer">
-            <small>Copyright &copy; 2011 madebysofa holding BV</small>
-        </div>
-        <div class="clear"></div>
-    </div>
-
-</div>
-<div class="content facebook">
-    <div class="wrap">
-        <div class="facebook container">
-            <img src="static/img/facebook/sofa-like.jpg" width="430" height="150" alt="Sofa Like">
-            <h5>Facebook Acquires Sofa</h5>
-            <div class="left">
-                <p class="grey">Amsterdam, June 9, 2011</p>
-                <p><strong>We're excited to announce today that <a href="http://www.facebook.com">Facebook</a><br> has acquired the Sofa team.</strong></p>
-                <p>When we started Sofa in 2006, we set out to make friendly and useful products that matter to people.</p>
-                <p>Over the years, we built an awesome team of designers and developers around this mission. Together, we created great software that many people use and enjoy every day. That's something we'll always be proud of.</p>
-                <p>We expected to keep working at Sofa forever. But after Facebook first made contact, we were quickly convinced to join forces.</p>
-                <p>Facebook is full of talent and has a great culture. We feel challenged and at home at the same time, and can really get things done there. But equally important, we believe that at Facebook, we will be making a real difference to a lot of people's lives.</p>
-            </div>
-            <div class="right">
-                <p class="grey">&nbsp;</p>
-                <p>The Sofa team will be moving from Amsterdam to Palo Alto in the coming weeks &ndash; and we'll make sure to infuse our particular flavor of Dutch culture at Facebook.</p>
-                <p>Sofa's products, <a href="http://www.kaleidoscopeapp.com">Kaleidoscope</a> and <a href="http://www.versionsapp.com">Versions</a>, are not a part of this acquisition. Both apps will remain available and we're committed to securing a great future for them outside Sofa. We're also working with our joint venture partner to provide the smoothest transition and best possible future for <a href="http://www.checkoutapp.com">Checkout</a>, <a href="http://www.enstore.com">Enstore</a> and their collective customers. For more details see <a href="/archive/future">this page</a>.</p>
-                <p>Finally, we want to express our deepest appreciation to our customers, partners, advisors and everyone else who helped us these past five years. Working with you all is the reason this adventure was so incredibly fun.</p>
-                <p class="grey">&mdash; The Sofa Team</p>
-            </div>
-        </div>
-        <div class="footer">
-            <small>Copyright &copy; 2011 madebysofa holding BV</small>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
+  <footer>
+	<p>&copy; Life2Play 2012</p>
+  </footer>
 </div>
 
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('bundles/welcome/js/jquery-1.7.2.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/welcome/js/bootstrap.min.js') }}" type="text/javascript"></script>
 {% endblock %}

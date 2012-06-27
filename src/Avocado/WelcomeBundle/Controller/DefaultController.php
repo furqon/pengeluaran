@@ -3,6 +3,7 @@
 namespace Avocado\WelcomeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Avocado\UserBundle\Entity\User;
 
 
 class DefaultController extends Controller

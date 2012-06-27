@@ -1,35 +1,27 @@
 security:
-    encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
-
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        in_memory:
-            users:
-                user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        fos_userbundle:
+            id: fos_user.user_manager
+
+    encoders:
+            "FOS\UserBundle\Model\UserInterface": sha512
 
     firewalls:
-        dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        login:
-            pattern:  ^/demo/secured/login$
-            security: false
-
-        secured_area:
-            pattern:    ^/demo/secured/
+        main:
+            pattern:    ^/
             form_login:
-                check_path: /demo/secured/login_check
-                login_path: /demo/secured/login
+                check_path: /login_check
+                login_path: /login
+                provider: fos_userbundle
+                default_target_path: /dashboard
             logout:
-                path:   /demo/secured/logout
-                target: /demo/
-            #anonymous: ~
+                path:   /logout
+                target: /
+            anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
 

@@ -1,3 +1,6 @@
+_user_bundle:
+    resource: "@UserBundle/Resources/config/routing.yml"
+
 ExpensesBundle:
     resource: "@ExpensesBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,3 +1,7 @@
 WelcomeBundle_homepage:
     pattern:  /
     defaults: { _controller: WelcomeBundle:Default:index }
+
+dashboard:
+    pattern:  /dashboard
+    defaults: { _controller: WelcomeBundle:Dashboard:index }
