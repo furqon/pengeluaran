@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+
+{% block expenses_toolbar %}
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">InfoPengeluaran</a>
+            <div class="btn-group pull-right">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="icon-user"></i>{{ app.user }}
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Profile</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{{ asset('app_dev.php/logout') }}">Sign Out</a></li>
+                </ul>
+            </div>
+            <div class="nav-collapse pull-right">
+                <ul class="nav">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Feature request</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+
+
+        </div>
+    </div>
+</div>
+{% endblock expenses_toolbar %}
+
+<p style="height: 50px;">&nbsp;</p>
+<div class="container">
+
+{{ block('expenses_content') }}
+
+{% block expenses_footer %}
+    <footer>
+        <p>&copy; Life2Play 2012</p>
+    </footer>
+</div>
+{% endblock expenses_footer %}
+
+{% endblock %}

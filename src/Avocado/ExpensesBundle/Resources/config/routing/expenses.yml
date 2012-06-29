@@ -28,3 +28,7 @@ expenses_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "ExpensesBundle:Expenses:delete" }
     requirements: { _method: post }
+
+expenses_list:
+    pattern:  /list
+    defaults: { _controller: "ExpensesBundle:Expenses:list" }

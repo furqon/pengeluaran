@@ -11,8 +11,7 @@ class ExpensesType extends AbstractType
     {
         $builder
             ->add('userid')
-            ->add('time')
-            ->add('record_id')
+            ->add('time', 'datetime', array('input'=>'datetime', 'widget'=>'single_text'))
             ->add('notes')
             ->add('amount')
         ;
@@ -20,6 +19,6 @@ class ExpensesType extends AbstractType
 
     public function getName()
     {
-        return 'avocado_expensesbundle_expensestype';
+        return 'frm';
     }
 }

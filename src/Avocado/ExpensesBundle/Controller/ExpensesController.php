@@ -23,9 +23,38 @@ class ExpensesController extends Controller
 
         $entities = $em->getRepository('ExpensesBundle:Expenses')->findAll();
 
+        $entity = new Expenses();
+        $form   = $this->createForm(new ExpensesType(), $entity);
+
         return $this->render('ExpensesBundle:Expenses:index.html.twig', array(
-            'entities' => $entities
+            'entities' => $entities,
+            'form'   => $form->createView()
         ));
+    }
+
+    /**
+     * Lists all Expenses entities with json.
+     *
+     */
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        $entities = $em->getRepository('ExpensesBundle:Expenses')->findBy(array('userid'=>'1'), array('time'=>'DESC'));
+        var_dump($entities->getId()); die;
+
+        $test = $entities->getArrayResult();
+
+        var_dump($test); die;
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $query = $em->createQuery("SELECT time, amount FROM expenses WHERE userid=1");
+
+        $myArray = $query->getArrayResult();
+
+        echo "<pre>";
+        print_r($myArray);
+        echo '</pre>';
+        die;
     }
 
     /**
@@ -72,8 +101,8 @@ class ExpensesController extends Controller
      */
     public function createAction()
     {
-        $entity  = new Expenses();
         $request = $this->getRequest();
+        $entity  = new Expenses();
         $form    = $this->createForm(new ExpensesType(), $entity);
         $form->bindRequest($request);
 
@@ -82,9 +111,10 @@ class ExpensesController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('expenses_show', array('id' => $entity->getId())));
-            
+//            return $this->redirect($this->generateUrl('expenses_show', array('id' => $entity->getId())));
+            die('saved');
         }
+        die('saved');
 
         return $this->render('ExpensesBundle:Expenses:new.html.twig', array(
             'entity' => $entity,

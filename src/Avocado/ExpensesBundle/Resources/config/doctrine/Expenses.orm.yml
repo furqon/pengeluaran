@@ -11,8 +11,6 @@ Avocado\ExpensesBundle\Entity\Expenses:
       type: integer
     time:
       type: datetime
-    record_id:
-      type: integer
     notes:
       type: text
     amount:

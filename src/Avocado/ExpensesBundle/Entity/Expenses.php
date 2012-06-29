@@ -25,11 +25,6 @@ class Expenses
     private $time;
 
     /**
-     * @var integer $record_id
-     */
-    private $record_id;
-
-    /**
      * @var text $notes
      */
     private $notes;
@@ -58,6 +53,7 @@ class Expenses
     public function setUserid($userid)
     {
         $this->userid = $userid;
+//        $this->userid = $this->userid;
     }
 
     /**
@@ -88,26 +84,6 @@ class Expenses
     public function getTime()
     {
         return $this->time;
-    }
-
-    /**
-     * Set record_id
-     *
-     * @param integer $recordId
-     */
-    public function setRecordId($recordId)
-    {
-        $this->record_id = $recordId;
-    }
-
-    /**
-     * Get record_id
-     *
-     * @return integer 
-     */
-    public function getRecordId()
-    {
-        return $this->record_id;
     }
 
     /**
