@@ -116,7 +116,7 @@ class ExpensesController extends Controller
 
             return new Response(json_encode(array('result' => 'saved')), 201);
         } 
-        return new Response(json_encode(array('result' => 'failed', 'error' => $form->getErrors())), 412);
+        return new Response(json_encode(array('result' => 'failed'), 412);
     }
 
     /**
