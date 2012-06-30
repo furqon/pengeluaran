@@ -1,9 +1,11 @@
 <?php
 
-namespace Avocado\ExpensesBundle\Form;
+namespace Avocado\ExpensesBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
 
 class ExpensesType extends AbstractType
 {
@@ -19,6 +21,6 @@ class ExpensesType extends AbstractType
 
     public function getName()
     {
-        return 'frm';
+        return 'expenses';
     }
 }

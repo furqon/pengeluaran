@@ -52,12 +52,13 @@
             <div class="span4">
                 <h2>Catatkan pengeluaranmu!</h2>
                 <form method="post" {{ form_enctype(form) }} class="well" id="formCatat">
+                  {{ form_widget(form._token) }}
                     <div>
                         <div class="input-prepend">
                             <span class="add-on">Rp.</span>
-                            <input class="span6" type="text" style="text-align: right;" id="expenses" required="required" name="frm[amount]" />
+                            <input class="span6" type="text" style="text-align: right;" id="expenses" required="required" name="expenses[amount]" />
                         </div>
-                        <input type="text" id="tags" name="frm[notes]">
+                        <input type="text" id="tags" name="expenses[notes]">
                         <span class="help-block">mis: makan, belanja, starbucks, traktir..</span>
                     </div>
 
@@ -98,7 +99,7 @@
                 url: '{{ path('expenses_create') }}',
                 method: 'POST',
                 type: 'POST',
-                data: serializedForm+'&frm[time]={{ "now"|date("Y-m-d H:i:s") }}&frm[userid]={{ app.user.id }}',
+                data: serializedForm,
                 beforeSend: function(){
                     $('#btnCatat').val('Mencatat...').removeClass('btn-success').addClass('btn-danger');
                 },

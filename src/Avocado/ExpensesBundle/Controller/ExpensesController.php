@@ -3,9 +3,10 @@
 namespace Avocado\ExpensesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 use Avocado\ExpensesBundle\Entity\Expenses;
-use Avocado\ExpensesBundle\Form\ExpensesType;
+use Avocado\ExpensesBundle\Form\Type\ExpensesType;
 
 /**
  * Expenses controller.
@@ -101,25 +102,21 @@ class ExpensesController extends Controller
      */
     public function createAction()
     {
-        $request = $this->getRequest();
-        $entity  = new Expenses();
-        $form    = $this->createForm(new ExpensesType(), $entity);
-        $form->bindRequest($request);
+        $entity = new Expenses();
+        $userid = $this->get('security.context')->getToken()->getUser()->getId();
+        $form   = $this->createForm(new ExpensesType(), $entity);
+        $form->bindRequest($this->getRequest());
 
         if ($form->isValid()) {
+            $entity->setUserid($userid);
+            $entity->setTime(new \DateTime);
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($entity);
             $em->flush();
 
-//            return $this->redirect($this->generateUrl('expenses_show', array('id' => $entity->getId())));
-            die('saved');
-        }
-        die('saved');
-
-        return $this->render('ExpensesBundle:Expenses:new.html.twig', array(
-            'entity' => $entity,
-            'form'   => $form->createView()
-        ));
+            return new Response(json_encode(array('result' => 'saved')), 201);
+        } 
+        return new Response(json_encode(array('result' => 'failed', 'error' => $form->getErrors())), 412);
     }
 
     /**

@@ -53,7 +53,6 @@ class Expenses
     public function setUserid($userid)
     {
         $this->userid = $userid;
-//        $this->userid = $this->userid;
     }
 
     /**
