@@ -1,15 +1,26 @@
-{% extends '::base.html.twig' %}
+{% extends 'WelcomeBundle::layout.html.twig' %}
+
+{% block stylesheets %}
+<link href="{{ asset('bundles/welcome/css/pengeluaran.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
 
 {% block body %}
+<div id="header">
+    <div class="container">
+        <h1>pengeluaran.info</h1>
+    </div><!-- container -->
+</div>
+
+<div id="intro">
+    <div class="container">
+        <div class="eight columns alpha" id="introtext">
+            <button class="btn btn-success btn-large" href="#">Ayo gabung..</button>
+        </div>
+    </div><!-- container -->
+</div>
 
 <div class="container">
-  <!-- Main hero unit for a primary marketing message or call to action -->
-  <div class="hero-unit">
-	<h1>Info Pengeluaran!</h1>
-	<p>This is a tools that you can use to track down your expenses.</p>
-	<p><a class="btn btn-primary btn-large">More &raquo;</a></p>
-  </div>
-
 
   <!-- Example row of columns -->
   <div class="row">

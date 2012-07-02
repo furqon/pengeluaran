@@ -1,0 +1,14 @@
+div#header{
+    border-bottom:2px solid #999;
+    height:40px;
+    background: #EFEFEF;
+    padding-top: 10px;
+}
+
+div#intro{
+    background:url(../img/bg.png) center no-repeat;
+    height:300px;
+    border-bottom:2px solid #999;
+    margin-bottom: 10px;}
+
+#introtext{ margin-top:50px; padding-top: 20px; }

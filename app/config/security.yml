@@ -17,7 +17,7 @@ security:
                 check_path: /login_check
                 login_path: /login
                 provider: fos_userbundle
-                default_target_path: /dashboard
+                default_target_path: /expenses
             logout:
                 path:   /logout
                 target: /

@@ -40,22 +40,12 @@ class ExpensesController extends Controller
     public function listAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $entities = $em->getRepository('ExpensesBundle:Expenses')->findBy(array('userid'=>'1'), array('time'=>'DESC'));
-        var_dump($entities->getId()); die;
+        $query = $em->createQuery("SELECT u FROM Avocado\ExpensesBundle\Entity\Expenses u WHERE u.userid = :uid ");
+        $query->setParameter('uid', 1);
+//        $query->setParameter('unotes', 'starbux');
 
-        $test = $entities->getArrayResult();
-
-        var_dump($test); die;
-
-        $em = $this->getDoctrine()->getEntityManager();
-        $query = $em->createQuery("SELECT time, amount FROM expenses WHERE userid=1");
-
-        $myArray = $query->getArrayResult();
-
-        echo "<pre>";
-        print_r($myArray);
-        echo '</pre>';
-        die;
+        $result = $query->getArrayResult();
+        return new Response(json_encode($result), 201);
     }
 
     /**
